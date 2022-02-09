@@ -1,0 +1,16 @@
+version: "3"
+services:
+  joal:
+    image: anthonyraymond/joal:2.1.29
+    container_name: joal
+    restart: unless-stopped
+    volumes:
+      - ./:/data
+    ports:
+      - 8080:8080
+    command: 
+      - "--joal-conf=/data"
+      - "--spring.main.web-environment=true"
+      - "--server.port=8080"
+      - "--joal.ui.path.prefix=joal"
+      - "--joal.ui.secret-token=k9Xgiy9TPVnZbh"
